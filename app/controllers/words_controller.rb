@@ -25,7 +25,6 @@ class WordsController < ApplicationController
     score_and_message = score_and_message(attempt, grid, result[:time])
     result[:score] = score_and_message.first
     result[:message] = score_and_message.last
-
     result
   end
 
@@ -55,10 +54,4 @@ class WordsController < ApplicationController
   def compute_score(attempt, time_taken)
     time_taken > 60.0 ? 0 : attempt.size * (1.0 - time_taken / 60.0)
   end
-
-
-
-
-
-
 end
