@@ -1,0 +1,16 @@
+
+<h1>******** Welcome to the longest word-game!********</h1>
+
+<p>Here is your grid:</p>
+
+<%=  @grid %>
+
+<h1>*****************************************************</h1>
+
+<form action="/score">
+  <%= hidden_field_tag :grid, @grid %>
+  <%= hidden_field_tag :start_time, @start_time %>
+  <label for="question">Answer:</label>
+  <input type="text" id="question" name="attempt" placeholder="what's your best shot?">
+  <input type="submit" value="Go!">
+</form>
